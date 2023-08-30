@@ -1,5 +1,5 @@
 /*
- * Title: Hw01b_Histogram.java
+ * Title: Hw01b_Histograms.java
  * Abstract: This program print a Horizontal and Vertical Histogram
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Hw01b_Histogram {
+public class Hw01b_Histograms {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter input file name: ");
@@ -37,7 +37,7 @@ public class Hw01b_Histogram {
     // horizontal
     public static void horizontal(int[] inputs) {
         System.out.println("===== Horizontal Histogram =====");
-        
+
         for (int i = 0; i < inputs.length; i++) {
             System.out.print(inputs[i] + ": ");
             for (int j = 0; j < inputs[i]; j++) {
