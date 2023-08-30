@@ -1,15 +1,16 @@
+/*
+ * Title: Hw01b_Histogram.java
+ * Abstract: This program print a Horizontal and Vertical Histogram
+ * Author: Kazuma Saito
+ * Email: kasaito@csumb.edu
+ * Estimate: 1.5h
+ * Date: 8/29/2023
+ */
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-/*
- * Title: Hw01_Distinct.java
- * Abstract: This program is counting distinct numbers.
- * Author: Kazuma Saito
- * Email: kasaito@csumb.edu
- * Estimate: 30min
- * Date: 8/29/2023
- */
 public class Hw01b_Histogram {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -28,14 +29,54 @@ public class Hw01b_Histogram {
 
         fr.close();
 
+        horizontal(inputs);
+        vertical(inputs);
+    }
+
+
+    // horizontal
+    public static void horizontal(int[] inputs) {
         System.out.println("===== Horizontal Histogram =====");
-        for (int i = 0; i < size; i++) {
+        
+        for (int i = 0; i < inputs.length; i++) {
             System.out.print(inputs[i] + ": ");
             for (int j = 0; j < inputs[i]; j++) {
                 System.out.print("* ");
             }
+            System.out.println();
+        }
 
-            System.out.println(" ");
+        System.out.println();
+    }
+
+    // vertical
+    public static void vertical(int[] inputs) {
+        System.out.println("=====  Vertical Histogram  =====");
+
+        // find maxNum
+        int maxNum = inputs[0];
+
+        for (int input : inputs) {
+            if (maxNum < input) {
+                maxNum = input;
+            }
+        }
+
+        for (int i = maxNum; i >= 1; i--) {
+            for (int j = 0; j < inputs.length; j++) {
+                if (inputs[j] >= i) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+
+        System.out.println("----------");
+
+        for (int input : inputs) {
+            System.out.print(input + " ");
         }
     }
 }
