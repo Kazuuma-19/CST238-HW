@@ -29,6 +29,11 @@ public class Hw01_Distinct {
 
         fr.close();
 
+        findMinNum(inputs);
+        countNum(inputs, size);
+    }
+
+    public static void findMinNum(int[] inputs) {
         // find minNum
         int minNum = inputs[0];
 
@@ -37,7 +42,11 @@ public class Hw01_Distinct {
                 minNum = input;
             }
         }
+
         System.out.println("MinNumber: " + minNum);
+    }
+
+    public static void countNum(int[] inputs, int size) {
         System.out.println("Number Count");
 
         for (int i = 0; i < size; i++) {
