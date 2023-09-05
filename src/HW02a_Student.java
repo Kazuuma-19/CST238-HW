@@ -1,5 +1,5 @@
 /*
- * Title: Hw02A.java
+ * Title: HW02a_Student.java
  * Abstract: This program calculates the student average score
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class HW02A {
+public class HW02a_Student {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter input file name: ");

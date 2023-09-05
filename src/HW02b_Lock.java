@@ -2,7 +2,7 @@
 //import java.util.Scanner;
 //import java.util.concurrent.locks.Lock;
 //
-//public class HW02B {
+//public class HW02b_Lock {
 //  public static void main(String[] args) {
 //    Random r = new Random();
 //    Scanner in = new Scanner(System.in);
