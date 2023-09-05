@@ -46,8 +46,6 @@ class Lock {
         codes[1] = secondNum;
         codes[2] = thirdNum;
 
-        System.out.println(firstNum + " " + secondNum + " " + thirdNum);
-
         currentCode = 0;
         guessCount = 0;
     }
