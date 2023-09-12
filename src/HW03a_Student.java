@@ -1,6 +1,6 @@
 /*
  * Title: HW03a_Student.java
- * Abstract: This program is a number guessing game
+ * Abstract: "This program checks the course registration status
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
  * Estimate: 2h
