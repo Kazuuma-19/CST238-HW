@@ -1,12 +1,12 @@
 /*
- * Title: HW03a_Student.java
+ * Title: HW03c_Advanced.java
  * Abstract: This program is a list with various functions.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
  * Estimate: 1h
  * Date: 09/13/2023
  */
-public class HW03c_Advance {
+public class HW03c_Advanced {
     public static void main(String[] args) {
         List myList = new List();
         myList.append(10);
