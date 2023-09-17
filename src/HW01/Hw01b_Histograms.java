@@ -1,3 +1,4 @@
+package HW01;
 /*
  * Title: Hw01b_Histograms.java
  * Abstract: This program print a Horizontal and Vertical Histogram

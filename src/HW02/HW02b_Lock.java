@@ -1,3 +1,4 @@
+package HW02;
 /*
  * Title: HW02b_Lock.java
  * Abstract: This program is a number guessing game

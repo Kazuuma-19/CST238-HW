@@ -1,3 +1,4 @@
+package HW01;
 /*
  * Title: Hw01_Distinct.java
  * Abstract: This program is counting distinct numbers.

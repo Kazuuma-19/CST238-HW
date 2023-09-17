@@ -1,3 +1,4 @@
+package HW03;
 /*
  * Title: HW03a_Student.java
  * Abstract: "This program checks the course registration status
