@@ -119,6 +119,29 @@ public class Queue {
         return isAscending || isDescending;
     }
 
+    public boolean drop(char value) {
+        boolean canDrop = false;
+        int dropIndex = 0;
+
+        // check if there is the value
+        for (int i = front; i != back; i = (i + 1) % data.length) {
+            if (data[i] == value) {
+                dropIndex = i;
+                canDrop = true;
+                break;
+            }
+        }
+
+        // left-shift
+        if (canDrop) {
+            for (int i = dropIndex; i != back; i = (i + 1) % data.length) {
+                data[i] = data[(i + 1) % data.length];
+            }
+            back = (back - 1) % data.length;
+        }
+        return canDrop;
+    }
+
     public String toString() {
         StringBuffer sb = new StringBuffer("Queue Contents: ");
         if (isEmpty()) {
