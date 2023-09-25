@@ -157,6 +157,20 @@ public class Queue {
         return isUsed;
     }
 
+    public void dump() {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < data.length; i++) {
+            if (indexUsed(i)) {
+                sb.append(data[i] + " ");
+            } else {
+                sb.append("_ ");
+            }
+        }
+        System.out.println("front: " + front);
+        System.out.println("back: " + back);
+        System.out.println(sb.toString());
+    }
+
     public String toString() {
         StringBuffer sb = new StringBuffer("Queue Contents: ");
         if (isEmpty()) {

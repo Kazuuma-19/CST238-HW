@@ -3,19 +3,19 @@ package HW04.partB;
 class Main {
     public static void main(String[] args) {
         Queue q = new Queue();
-        String str = "ACBC";
+        String str = "ACBCDE";
         q.enqueue(str.charAt(0));
         q.enqueue(str.charAt(1));
         q.enqueue(str.charAt(2));
         q.enqueue(str.charAt(3));
-//        q.enqueue(str.charAt(4));
-//        q.enqueue(str.charAt(5));
+        q.enqueue(str.charAt(4));
+        q.enqueue(str.charAt(5));
 
         System.out.println(q);
         System.out.println();
 
-//        q.dequeue();
-//        q.dequeue();
+        q.dequeue();
+        q.dequeue();
 //        System.out.println(q);
 //        System.out.println();
 
@@ -27,7 +27,7 @@ class Main {
         System.out.println();
 
         // drop
-        String dropStr = "C";
+        String dropStr = "G";
         if (q.drop(dropStr.charAt(0))) {
             System.out.println("The String can drop");
         } else {
@@ -42,5 +42,9 @@ class Main {
         } else {
             System.out.println("The index is not used");
         }
+        System.out.println();
+
+        //dump
+        q.dump();
     }
 }
