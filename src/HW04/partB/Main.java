@@ -35,5 +35,12 @@ class Main {
         }
         System.out.println(q);
         System.out.println();
+
+        // indexUsed
+        if (q.indexUsed(2)) {
+            System.out.println("The index is used");
+        } else {
+            System.out.println("The index is not used");
+        }
     }
 }

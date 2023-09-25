@@ -3,7 +3,7 @@
  * Abstract: This program convert decimal to binary.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
- * Estimate: 1.5h
+ * Estimate: 2h
  * Date: 09/23/2023
  */
 package HW04.partB;
@@ -140,6 +140,21 @@ public class Queue {
             back = (back - 1) % data.length;
         }
         return canDrop;
+    }
+
+    public boolean indexUsed(int index) {
+        boolean isUsed = false;
+
+        if (index >= 0 && index < QUEUE_CAPACITY) {
+            for (int i = front; i != back; i = (i + 1) % data.length) {
+                if (index == i) {
+                    isUsed = true;
+                    break;
+                }
+            }
+        }
+
+        return isUsed;
     }
 
     public String toString() {
