@@ -1,10 +1,10 @@
 /*
  * Title: Queue.java
- * Abstract: This program convert decimal to binary.
+ * Abstract: This program extends lab solution and add 4 methods.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
- * Estimate: 2h
- * Date: 09/23/2023
+ * Estimate: 2.5h
+ * Date: 09/25/2023
  */
 package HW04.partB;
 
