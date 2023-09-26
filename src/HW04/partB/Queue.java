@@ -1,6 +1,6 @@
 /*
  * Title: Queue.java
- * Abstract: This program extends lab solution and add 4 methods.
+ * Abstract: This program extends lab solution and adds 4 methods.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
  * Estimate: 2.5h
@@ -143,18 +143,15 @@ public class Queue {
     }
 
     public boolean indexUsed(int index) {
-        boolean isUsed = false;
-
         if (index >= 0 && index < QUEUE_CAPACITY) {
             for (int i = front; i != back; i = (i + 1) % data.length) {
                 if (index == i) {
-                    isUsed = true;
-                    break;
+                    return true;
                 }
             }
         }
 
-        return isUsed;
+        return false;
     }
 
     public void dump() {

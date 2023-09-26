@@ -37,7 +37,7 @@ class Main {
         System.out.println();
 
         // indexUsed
-        if (q.indexUsed(2)) {
+        if (q.indexUsed(6)) {
             System.out.println("The index is used");
         } else {
             System.out.println("The index is not used");
