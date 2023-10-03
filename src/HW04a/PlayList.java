@@ -55,21 +55,18 @@ public class PlayList {
     }
 
     public void move(int startingPosition, int endingPosition) {
-        int startingIndex = startingPosition - 1;
-        int endingIndex = endingPosition - 1;
-        Song moveSong = songs[startingIndex];
+        Song moveSong = songs[startingPosition];
 
         // remove
-        for (int i = startingIndex; i < size; i++) {
+        for (int i = startingPosition; i < size; i++) {
             songs[i] = songs[i + 1];
         }
         size--;
-        System.out.println(songs.length);
         // insert
-        for (int i = size; i > endingIndex; i--) {
+        for (int i = size; i > endingPosition; i--) {
             songs[i] = songs[i - 1];
         }
-        songs[endingIndex] = moveSong;
+        songs[endingPosition] = moveSong;
         size++;
     }
 
@@ -120,24 +117,66 @@ public class PlayList {
         }
     }
 
-    public String toString() {
-        StringBuffer sb = new StringBuffer();
+    public int shortestSongIndex() {
+        int shortestSong = Integer.MAX_VALUE;
+        int shortestIndex = 0;
 
-        for (int i = 0; i < size; i++) {
-            int minutes = songs[i].getLength() / 60;
-            int seconds = songs[i].getLength() % 60;
-
-            sb.append((i + 1) + ". ");
-            sb.append(songs[i].getTitle());
-            sb.append(" (" + songs[i].getArtist() + ") ");
-            sb.append(minutes + ":");
-            if (seconds < 10) {
-                sb.append("0");
-            }
-            sb.append(seconds);
-            sb.append("\n");
+        // empty
+        if (size == 0) {
+            return -1;
         }
 
-        return sb.toString();
+        for (int i = 0; i < size; i++) {
+            if (songs[i].getLength() < shortestSong) {
+                shortestSong = songs[i].getLength();
+                shortestIndex = i;
+            }
+        }
+
+        return shortestIndex;
+    }
+
+    public Song longestSong() {
+        int longestSong = Integer.MIN_VALUE;
+        int longestIndex = 0;
+
+        // empty
+        if (size == 0) {
+            return null;
+        }
+
+        for (int i = 0; i < size; i++) {
+            if (songs[i].getLength() > longestSong) {
+                longestSong = songs[i].getLength();
+                longestIndex = i;
+            }
+        }
+
+        return songs[longestIndex];
+    }
+
+    public String toString() {
+        if (size == 0) {
+            return "Empty playlist";
+        } else {
+            StringBuffer sb = new StringBuffer();
+
+            for (int i = 0; i < size; i++) {
+                int minutes = songs[i].getLength() / 60;
+                int seconds = songs[i].getLength() % 60;
+
+                sb.append((i + 1) + ". ");
+                sb.append(songs[i].getTitle());
+                sb.append(" (" + songs[i].getArtist() + ") ");
+                sb.append(minutes + ":");
+                if (seconds < 10) {
+                    sb.append("0");
+                }
+                sb.append(seconds);
+                sb.append("\n");
+            }
+
+            return sb.toString();
+        }
     }
 }
