@@ -73,6 +73,53 @@ public class PlayList {
         size++;
     }
 
+    private int linearSearch(int year) {
+        System.out.println("Running Linear Search");
+        for (int i = 0; i < size; i++) {
+            if (songs[i].getYear() == year) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private int binarySearch(int year) {
+        System.out.println("Running Binary Search");
+        int first = 0;
+        int last = size - 1;
+
+        while (first <= last) {
+            int middle = (first + last) / 2;
+            int middleSong = songs[middle].getYear();
+            if (middleSong == year) {
+                return middle;
+            } else if (middleSong < year) {
+                first = middle + 1;
+            } else {
+                last = middle - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    private boolean isSortedByYear() {
+        for (int i = 1; i < size; i++) {
+            if (songs[i].getYear() < songs[i - 1].getYear()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int search(int year) {
+        if (isSortedByYear()) {
+            return binarySearch(year);
+        } else {
+            return linearSearch(year);
+        }
+    }
+
     public String toString() {
         StringBuffer sb = new StringBuffer();
 
