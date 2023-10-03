@@ -1,10 +1,10 @@
 /*
  * Title: PlayList.java
- * Abstract: This program convert decimal to binary.
+ * Abstract: This program manages information about a playlist that contains multiple songs and includes methods to manipulate the playlist.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
- * Estimate: 30m
- * Date: 10/01/2023
+ * Estimate: 2.5h
+ * Date: 10/03/2023
  */
 package HW04a;
 

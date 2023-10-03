@@ -1,10 +1,10 @@
 /*
  * Title: Song.java
- * Abstract: This program convert decimal to binary.
+ * Abstract: This program handles information about each song.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
- * Estimate: 30m
- * Date: 10/01/2023
+ * Estimate: 2.5h
+ * Date: 10/03/2023
  */
 package HW04a;
 
