@@ -3,8 +3,8 @@
  * Abstract: This program resize queue.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
- * Estimate: 1.5h
- * Date: 10/11/2023
+ * Estimate: 2h
+ * Date: 10/12/2023
  */
 package HW05.partB;
 
@@ -59,30 +59,24 @@ public class Queue {
 
     public int getSize() {
         if (front > back) {
-            return (data.length - front) + (back + 1);
+            return (data.length - front) + back;
         } else {
             return back - front;
         }
     }
 
     public void resize() {
-        int[] temp = new int[data.length + 1];
+        int[] temp = new int[data.length + 6];
         for (int i = 0; i < data.length; i++) {
             if (i < back) {
                 temp[i] = data[i];
             } else {
-                temp[i + 1] = data[i];
+                temp[i + 6] = data[i];
             }
         }
-//        for (int d :
-//                temp) {
-//            System.out.print(d + ", ");
-//        }
-//        System.out.println();
-//        System.out.println();
 
         data = temp;
-        front++;
+        front = front + 6;
 
         System.out.println("Array is resized");
         System.out.println();

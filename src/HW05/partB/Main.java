@@ -17,14 +17,8 @@ public class Main {
         }
         System.out.println("Size (should be 2): " + q.getSize());
         System.out.println(q.printable());
+        
         System.out.println();
-//        q.enqueue(-1);
-//        q.enqueue(-2);
-//        q.enqueue(-3);
-//        System.out.println(q.printable());
-//        q.enqueue(-4);
-////        q.enqueue(-5);
-
         for (int i = 0; i < 5; i++) {
             q.enqueue((i + 1) * -1);
         }
