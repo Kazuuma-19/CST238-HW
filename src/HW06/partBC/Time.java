@@ -3,13 +3,13 @@
  * Abstract: This program merges two array in ascending order.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
- * Estimate: 1h
- * Date: 10/09/2023
+ * Estimate: 2h
+ * Date: 10/17/2023
  */
 
 package HW06.partBC;
 
-public class Time {
+public class Time implements Comparable<Time> {
     private int hours;
     private int minutes;
 
@@ -71,6 +71,20 @@ public class Time {
         totalHours %= 24;
 
         return new Time(totalHours, totalMinutes);
+    }
+
+    public int toMinutes() {
+        return hours * 60 + minutes;
+    }
+
+    public int compareTo(Time t) {
+        if (this.toMinutes() < t.toMinutes()) {
+            return -1;
+        } else if (this.toMinutes() > t.toMinutes()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public String toString() {
