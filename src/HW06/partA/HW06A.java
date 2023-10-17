@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class hw06A {
+public class HW06A {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a filename: ");

@@ -1,6 +1,6 @@
 /*
  * Title: Time.java
- * Abstract: This program merges two array in ascending order.
+ * Abstract: This program prints standard and military time,and compare and sort the time.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
  * Estimate: 2h
