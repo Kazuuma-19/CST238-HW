@@ -1,6 +1,6 @@
 /*
  * Title: SortMethods.java
- * Abstract: This program generate a string of folded numbers using file input.
+ * Abstract: This program compares each sorting.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
  * Estimate: 1.5h
@@ -25,8 +25,10 @@ public class SortMethods {
             for (int j = 0; j < data.length - 1 - i; j++) {
                 if (data[j] > data[j + 1]) {
                     swap(data, j, j + 1);
+                    swaps++;
                 }
             }
+            comparisons++;
         }
 
         sw.stop();
@@ -46,10 +48,12 @@ public class SortMethods {
                 if (data[j] < data[smallestIndex]) {
                     smallestIndex = j;
                 }
+                comparisons++;
             }
 
             if (i != smallestIndex) {
                 swap(data, i, smallestIndex);
+                swaps++;
             }
         }
 
@@ -69,7 +73,9 @@ public class SortMethods {
             while (comp > 0 && data[comp] < data[comp - 1]) {
                 swap(data, comp, comp - 1);
                 comp--;
+                swaps++;
             }
+            comparisons++;
         }
 
         sw.stop();
