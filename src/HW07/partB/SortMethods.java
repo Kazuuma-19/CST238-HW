@@ -1,9 +1,9 @@
 /*
  * Title: SortMethods.java
- * Abstract: This program compares each sorting.
+ * Abstract: This program compares each sorting. I also created a fastInsertionSort as an extra credit.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
- * Estimate: 1.5h
+ * Estimate: 2h
  * Date: 10/24/2023
  */
 package HW07.partB;
@@ -89,13 +89,26 @@ public class SortMethods {
         Stopwatch sw = Stopwatch.createStarted();
 
         // write sorting code here
+        for (int i = 1; i < data.length; i++) {
+            int temp = data[i];
+            int j = i - 1;
+
+            while (j >= 0 && data[j] > temp) {
+                comparisons++;
+                shift(data, j, j + 1);
+                j = j - 1;
+                swaps++;
+            }
+
+            data[j + 1] = temp;
+        }
 
         sw.stop();
         return new SortResults("Fast Insertion", isSorted(data), sw.elapsed(TimeUnit.MICROSECONDS), swaps / 3, comparisons);
     }
 
     public static void shift(int[] data, int fromIndex, int toIndex) {
-        // write shift code
+        data[toIndex] = data[fromIndex];
     }
 
     public static void swap(int[] a, int i1, int i2) {
