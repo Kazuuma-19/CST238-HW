@@ -60,5 +60,4 @@ public class Main {
         if (sorted) Arrays.sort(data);
         return data;
     }
-
 }

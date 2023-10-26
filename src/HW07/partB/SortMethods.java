@@ -3,8 +3,8 @@
  * Abstract: This program compares each sorting. I also created a fastInsertionSort as an extra credit.
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
- * Estimate: 2h
- * Date: 10/24/2023
+ * Estimate: 2.5h
+ * Date: 10/26/2023
  */
 package HW07.partB;
 
@@ -23,12 +23,12 @@ public class SortMethods {
         // write sorting code here
         for (int i = 0; i < data.length - 1; i++) {
             for (int j = 0; j < data.length - 1 - i; j++) {
+                comparisons++;
                 if (data[j] > data[j + 1]) {
                     swap(data, j, j + 1);
                     swaps++;
                 }
             }
-            comparisons++;
         }
 
         sw.stop();
@@ -70,12 +70,17 @@ public class SortMethods {
         // write sorting code here
         for (int i = 1; i < data.length; i++) {
             int comp = i;
-            while (comp > 0 && data[comp] < data[comp - 1]) {
-                swap(data, comp, comp - 1);
-                comp--;
-                swaps++;
+            while (comp > 0) {
+                comparisons++;
+
+                if (data[comp] < data[comp - 1]) {
+                    swap(data, comp, comp - 1);
+                    comp--;
+                    swaps++;
+                } else {
+                    break;
+                }
             }
-            comparisons++;
         }
 
         sw.stop();
@@ -93,11 +98,16 @@ public class SortMethods {
             int temp = data[i];
             int j = i - 1;
 
-            while (j >= 0 && data[j] > temp) {
+            while (j >= 0) {
                 comparisons++;
-                shift(data, j, j + 1);
-                j = j - 1;
-                swaps++;
+
+                if (data[j] > temp) {
+                    shift(data, j, j + 1);
+                    j = j - 1;
+                    swaps++;
+                } else {
+                    break;
+                }
             }
 
             data[j + 1] = temp;
