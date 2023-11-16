@@ -167,7 +167,7 @@ public class RecursiveLinkedList<T extends Comparable<T>> {
         }
 
         public boolean search(T value) {
-            if (this.data == value) {
+            if (this.data.equals(value)) {
                 return true;
             }
             // there isn't the value
