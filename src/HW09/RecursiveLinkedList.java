@@ -1,6 +1,6 @@
 /*
  * Title: RecursiveLinkedList.java
- * Abstract: This program uses recursion to perform prime factorization.
+ * Abstract: This program makes linked list using recursive
  * Author: Kazuma Saito
  * Email: kasaito@csumb.edu
  * Estimate: 3h

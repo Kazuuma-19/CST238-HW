@@ -35,8 +35,8 @@ public class Hw09_LinkedListTester {
         System.out.println("Distinct: " + r2);
 
         RecursiveLinkedList<String> test = new RecursiveLinkedList<>();
-        test.append("chocolate");
         test.append("banana");
+        test.append("chocolate");
         test.append("apple");
         System.out.println("Is sorted? " + test.isSorted());
 
