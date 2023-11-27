@@ -105,9 +105,7 @@ public class RecursiveLinkedList<T extends Comparable<T>> {
         if (first == null) {
             return;
         }
-        Node temp = first;
         first = first.reverse(null);
-        temp.next = null;
     }
 
     public RecursiveLinkedList<T> remove(T value) {
