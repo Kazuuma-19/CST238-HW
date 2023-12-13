@@ -37,6 +37,7 @@ public class RecursiveMethods {
             return;
         } else {
             System.out.printf("Is %d prime? %b\n", value, isPrime(value));
+            System.out.println("Is prime 5 " + isPrime(5));
             ArrayList<Integer> factors = factorNumber(value);
             printFactors(factors);
             System.out.print("Enter a number (0 to quit): ");
@@ -81,11 +82,11 @@ public class RecursiveMethods {
     }
 
     public static boolean isPrime(int base, int comparison) {
-        if (comparison >= base || base < 2) {
-            return false;
+        if (comparison >= base) {
+            return true;
         }
         if (base % comparison == 0) {
-            return true;
+            return false;
         }
         return isPrime(base, comparison + 1);
     }
